@@ -8,27 +8,27 @@ import (
 )
 
 type Currency struct {
-    ID string `json:"id"`
-    Name string `json:"name"`
-    Description *string `json:"description"`
+	ID          string  `json:"id"`
+	Name        string  `json:"name"`
+	Description *string `json:"description"`
 }
 
 type CompanyCurrency struct {
-	CompanyID string `json:"company_id"`
-	CurrencyID string `json:"currency_id"`
+	CompanyID    string `json:"company_id"`
+	CurrencyID   string `json:"currency_id"`
 	CurrencyName string `json:"currency_name"`
-	ExchangeRate int `json:"exchange_rate"`
+	ExchangeRate int    `json:"exchange_rate"`
 }
 
 type CreateCurrencyPayload struct {
-    Name string `json:"name"`
-    Description *string `json:"description"`
+	Name        string  `json:"name"`
+	Description *string `json:"description"`
 }
 
 type CreateCompanyCurrencyPayload struct {
-	CompanyID string `json:"company_id"`
-	CurrencyID string `json:"currency_id"`
-	ExchangeRate int `json:"exchange_rate"`
+	CompanyID    string `json:"company_id"`
+	CurrencyID   string `json:"currency_id"`
+	ExchangeRate int    `json:"exchange_rate"`
 }
 
 func GetCurrencies(d *sql.DB) ([]Currency, error) {
